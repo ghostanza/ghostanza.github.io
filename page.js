@@ -16,7 +16,7 @@ var Navbtn = Vue.extend({
 });
 
 var MainWrapper = Vue.extend({
-	template:"<div id='main-wrapper'><slot name='heading'>Default</slot><slot name='content'><span style='font-size: 50px;color: transparent;' class='ghost'>coming soon.</span></slot></div>",
+	template:"<div id='main-wrapper'><slot name='heading'>Default</slot><slot name='content'><div class='coming-soon'><span style='font-size: 50px;color: transparent;' class='ghost'>coming soon.</span></div></slot></div>",
 });
 
 new Vue({
