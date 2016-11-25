@@ -5,8 +5,8 @@ html, body {
 }
 
 #contain {
-  width: 100vw;
-  height: 100vh;
+  width: calc(100% - 0px);
+  height: calc(100% - 0px);
   background: url("https://static.pexels.com/photos/132983/pexels-photo-132983.jpeg") no-repeat center center;
   background-size: cover;
 }
