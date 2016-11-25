@@ -134,6 +134,7 @@ h1:after {
 .coming-soon {
   display: flex;
   align-items: center;
+  justify-content: center;
   height: 100%;
   position: absolute;
 }
