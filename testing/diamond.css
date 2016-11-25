@@ -1,0 +1,50 @@
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+#contain {
+  width: 100vw;
+  height: 100vh;
+  background: url("https://static.pexels.com/photos/132983/pexels-photo-132983.jpeg") no-repeat center center;
+  background-size: cover;
+}
+
+#contain, #nav-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.diamond {
+  transform: rotate(-45deg);
+  box-shadow: -5px 5px 0px rgba(0, 0, 0, 0.4);
+  width: 20vmin;
+  line-height: 20vmin;
+  cursor: pointer;
+  background: coral;
+  transition: all 0.3s ease-out;
+  display: inline-block;
+  font-size: 25px;
+  color: white;
+}
+.diamond i {
+  transform: rotate(45deg);
+}
+.diamond:hover {
+  background: white;
+  color: coral;
+  border-radius: 50%;
+  box-shadow: -5px 10px 0px rgba(0, 0, 0, 0.2);
+  z-index: 3;
+  position: relative;
+}
+
+.diamond-row .diamond {
+  margin-top: -5vmin;
+}
+.diamond-row .diamond:nth-child(2) {
+  margin-left: 10vmin;
+}
+
