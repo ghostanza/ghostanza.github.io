@@ -1,1 +1,20 @@
-<h1>TESTING</h1>
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Test Page</title>
+    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="page.css">
+  </head>
+  <body>
+    <div id="vue">
+	    <nav-bar>
+		    <nav-btn v-for="location in locations" :loc="location" :current-view="view" @change-view = "changeView"></nav-btn>
+	    </nav-bar>
+	    <main-wrapper>
+		    <h1 slot="heading">{{view}}</h1>
+      </main-wrapper>
+     </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.0.1/vue.min.js"></script>
+    <script src="page.js"></script>
+  </body>
+</html>
