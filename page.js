@@ -2,12 +2,18 @@ var Card = Vue.extend({
 	template: "<div class='card'></div>",
 });
 var Navbar = Vue.extend({
-	template: "<div class='navbar'><slot></slot></div>",
+	props: ['menuOpen'],
+	template: "<div :class=\"[menuOpen ? 'open' : '', 'navbar']\"><div id='sm-trigger'><span @click='toggleMenu'><i :class=\"[menuOpen ? 'fa-times' : 'fa-bars', 'fa']\"></i></span></div><slot></slot></div>",
+	methods: {
+		toggleMenu: function(){
+		this.$emit('toggle');
+		}
+	}
 })
 
 var Navbtn = Vue.extend({
 	props: ['loc', 'currentView'],
-	template: "<button class='nav-btn' :class='{active : loc.name == currentView}' @click='updateView(loc.name)'><i :class='loc.fa_name'></i><span>{{loc.name}}</span></button>",
+	template: "<button class='nav-btn' :class='{active : loc.name == currentView}' @click='updateView(loc.name)'><i :class='loc.fa_name'></i><span class='name'>{{loc.name}}</span></button>",
 	methods:{
 		updateView: function(view){
 			this.$emit('change-view', view);
@@ -24,6 +30,7 @@ new Vue({
 	data: {
 		view: 'home',
 		preview: '',
+		menuOpen: false,
 		locations:[
 			{ name: 'home', fa_name: 'fa fa-home', desc: 'the home page'},
 			{ name: 'bikes', fa_name: 'fa fa-bicycle'},
@@ -41,6 +48,10 @@ new Vue({
 	methods:{
 		changeView: function(view){
 			this.view = view;
+			this.menuOpen = false;
 		},
+		toggleMenu: function(){
+			this.menuOpen = this.menuOpen ? false : true;
+		}
 	}
 });
