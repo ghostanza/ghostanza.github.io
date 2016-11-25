@@ -157,6 +157,10 @@ h1:after {
 }
 
 @media screen and (max-width: 800px) {
+  #main-wrapper{
+    width: 100%;
+    overflow: hidden;
+  }
   #sm-trigger {
     display: block;
   }
