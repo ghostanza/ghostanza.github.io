@@ -166,7 +166,7 @@ h1:after {
     left: calc(-100% + 80px);
     background: #222;
     z-index: 2;
-    transition: all 0.5s ease-in-out;
+    transition: all 0.3s;
   }
   .navbar.open {
     left: 0;
